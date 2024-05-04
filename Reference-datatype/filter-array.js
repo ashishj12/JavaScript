@@ -28,5 +28,4 @@ const products = [
 ];
 
 const expensiveProducts = products.filter((product) => product.price > 15);
-
 console.log(expensiveProducts);
