@@ -1,17 +1,18 @@
 **synchronous JavaScript**
 
-It is blocking technique so the execution  of one task doesn't dependent on other task before completition of one task.
+* It is blocking technique so the execution  of one task doesn't    dependent on other task before completition of one task.
 
+* when one task is executed then other task did not run until first task is completed.
 
 **Asynchronous JavaScript**
 
-It is a non-blocking technique so the execution  of one task doesn't dependent on other task  before completition of one task.
+* It is a non-blocking technique so the execution  of one task doesn't dependent on other task  before completition of one task.
 
-It is an Single Threaded Programming Language: In Single threded at a time only one task can execute
+* It is an Single Threaded Programming Language: In Single threded at a time only one task can execute
 
 **Execution Context**
 
-Execution context refers to it is only execute at a time only one line of code execute.
+* Execution context refers to it is only execute at a time only one line of code execute.
 
 **Blocking Code**
 
@@ -59,3 +60,8 @@ In setInterval There are two parameters in that method
 },2000)
 
 ***In some cases user want to stop settimeout method in an event listner to do that we call a function clearInterval and pass the event***
+
+
+**Callback Function**
+
+A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
