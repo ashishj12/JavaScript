@@ -65,3 +65,21 @@ In setInterval There are two parameters in that method
 **Callback Function**
 
 A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+
+**Promises**
+
+* In JavaScript promises are a way to handle asynchrouous operations is an orgamized manner.
+
+* they provide a clear syntax dealing with asychrounous code compare to traditional callback-based approaches.
+
+* Promises are widely used for making n/w requests, read/write and other operations that are block the main therad.
+
+* There can be three states : Pending,Fullfill or rejected.
+
+* A promise starts in a pending state. That means the process is not complete. If the operation is successful, the process ends in a fulfilled state. And, if an error occurs, the process ends in a rejected state.
+
+* For example, when you request data from the server by using a promise, it will be in a pending state. When the data arrives successfully, it will be in a fulfilled state. If an error occurs, then it will be in a rejected state.
+
+**Promise Chaining**
+
+promises can easily chained together using .then(), allowing you to sequence asynchronous operations.this is refer to the "Promise Chaining".
