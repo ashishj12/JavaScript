@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+
+<body>
+    <h1>setInterval</h1>
+    <button id="stop">stop</button>
+    <button id="start">start</button>
+</body>
+
+<script>
+    const sayint = function (str) {
+        console.log(str, Date.now())
+    }
+    const startbtn = setInterval(sayint, 2000)
+    document.querySelector('#start').addEventListener('click', function () {
+        clearInterval(startbtn)
+        console.log("stopped")
+    })
+    const stopbtn = setInterval(sayint, 2000)
+    document.querySelector('#stop').addEventListener('click', function () {
+        clearInterval(stopbtn)
+        console.log("stopped")
+    })
+</script>
+
+</html>
