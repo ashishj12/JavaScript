@@ -40,34 +40,34 @@
 
 
 
-function getuserdata(userid, callback) {
+function getuserdata(userid,callback){
 
-    setTimeout(function () {
+    setTimeout(function(){
         const users = {
-            1: { id: 1, name: "Ashish" },
-            2: { id: 2, name: "abc" }
+            1 : {id : 1,name:"Ashish"},
+            2 : {id : 2,name : "abc"}
         };
         const user = users[userid];
-        if (user) {
-            callback(null, user)
+        if(user){
+            callback(null,user)
         }
-        else {
-            callback("user not found..", null)
+        else{
+            callback("user not found.." ,null)
         }
-    }, 2000)
+    },2000)
 }
 
 
 //callback function
 
-function handleuserdata(error, user) {
-    if (error) {
+function handleuserdata(error,user){
+    if(error){
         console.log("Error : " + error)
     }
-    else {
-        console.log("User : " + user)
+    else{
+        console.log("User : " +user)
     }
 }
 
 
-getuserdata(1, handleuserdata);
+getuserdata(1,handleuserdata);
