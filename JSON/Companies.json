@@ -1,14 +1,20 @@
 [
     {
-        "name": "Big Company",
+        "name": "Google",
         "employees": 1000,
-        "ceo" : "abc",
-        "rating": 3.4
+        "ceo": "Sundar Pichai",
+        "rating": 5
     },
     {
-        "name": "Big Company2",
-        "employees": 10000,
-        "ceo" : "abc",
+        "name": "Amazon",
+        "employees": 1000,
+        "ceo": "Jeff Bezos",
         "rating": 4.4
+    },
+    {
+        "name": "Microsoft",
+        "employees": 1000,
+        "ceo": "Satya Nadella",
+        "rating": "4.5"
     }
 ]
