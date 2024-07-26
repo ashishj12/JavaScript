@@ -83,3 +83,11 @@ A callback function is a function passed into another function as an argument, w
 **Promise Chaining**
 
 promises can easily chained together using .then(), allowing you to sequence asynchronous operations.this is refer to the "Promise Chaining".
+
+
+**Async Await**
+
+* We use the async keyword with a function to represent that the function is an asynchronous function. The async function returns a promise.
+
+
+

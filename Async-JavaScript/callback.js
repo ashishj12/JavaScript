@@ -40,34 +40,56 @@
 
 
 
-function getuserdata(userid,callback){
+// function getuserdata(userid,callback){
 
-    setTimeout(function(){
-        const users = {
-            1 : {id : 1,name:"Ashish"},
-            2 : {id : 2,name : "abc"}
-        };
-        const user = users[userid];
-        if(user){
-            callback(null,user)
-        }
-        else{
-            callback("user not found.." ,null)
-        }
-    },2000)
-}
-
-
-//callback function
-
-function handleuserdata(error,user){
-    if(error){
-        console.log("Error : " + error)
-    }
-    else{
-        console.log("User : " +user)
-    }
-}
+//     setTimeout(function(){
+//         const users = {
+//             1 : {id : 1,name:"Ashish"},
+//             2 : {id : 2,name : "abc"}
+//         };
+//         const user = users[userid];
+//         if(user){
+//             callback(null,user)
+//         }
+//         else{
+//             callback("user not found.." ,null)
+//         }
+//     },2000)
+// }
 
 
-getuserdata(1,handleuserdata);
+// //callback function
+
+// function handleuserdata(error,user){
+//     if(error){
+//         console.log("Error : " + error)
+//     }
+//     else{
+//         console.log("User : " +user)
+//     }
+// }
+
+
+// getuserdata(1,handleuserdata);
+
+// function processData(input, callback) {
+//     return callback(input);
+// }
+
+// function toUpperCase(str) {
+//     return str.toUpperCase();
+// }
+
+// console.log(processData("hello world", toUpperCase)); 
+
+
+// function fetchData(url, callback) {
+//     setTimeout(function () {
+//         const data = `Response Data ${url}`;
+//         callback(data);
+//     }, 2000);
+// }
+
+// fetchData("https://api.example.com"), (Response) => {
+//     console.log(Response);
+// }
