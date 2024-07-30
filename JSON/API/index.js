@@ -1,16 +1,17 @@
 // Function to fetch data from the API
-async function fetchData(url) {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  return await response.json();
+function fetchData(url) {
+  return fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    });
 }
 
 // Function to create a table from the data
 function createTable(data) {
   const table = document.createElement('table');
-
   // Create header row
   const headerRow = table.insertRow();
   Object.keys(data[0]).forEach(key => {
@@ -18,41 +19,46 @@ function createTable(data) {
     th.textContent = key;
     headerRow.appendChild(th);
   });
-
   // Create data rows
   data.forEach(user => {
     const row = table.insertRow();
     Object.entries(user).forEach(([key, value]) => {
       const cell = row.insertCell();
+      let geoFind = []
       if (typeof value === 'object') {
-        cell.textContent = Object.values(value).join(', ');
+        for (let k in value) {
+          if (k != 'geo') {
+            geoFind.push(value[k])
+          }
+        }
+        cell.textContent = geoFind.join(', ')
       } else {
         cell.textContent = value;
       }
     });
   });
-
   return table;
 }
 
 // Fetch data and create table
-async function createTableFromAPI(apiUrl) {
+function createTableFromAPI(apiUrl) {
   const tableContainer = document.getElementById('tableContainer');
   const errorElement = document.getElementById('error');
   errorElement.textContent = '';
 
-  try {
-    const data = await fetchData(apiUrl);
-    if (data && data.length > 0) {
-      const table = createTable(data);
-      tableContainer.innerHTML = '';
-      tableContainer.appendChild(table);
-    } else {
-      throw new Error('No data received from API');
-    }
-  } catch (error) {
-    errorElement.textContent = `Error: ${error.message}`;
-  }
+  fetchData(apiUrl)
+    .then(data => {
+      if (data && data.length > 0) {
+        const table = createTable(data);
+        tableContainer.innerHTML = '';
+        tableContainer.appendChild(table);
+      } else {
+        throw new Error('No data received from API');
+      }
+    })
+    .catch(error => {
+      errorElement.textContent = `Error: ${error.message}`;
+    });
 }
 
 const apiUrl = 'https://jsonplaceholder.typicode.com/users';
